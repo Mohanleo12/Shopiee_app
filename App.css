@@ -1,0 +1,352 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration-line: none;
+    color: inherit;
+  }
+  
+  button {
+    font-family: inherit;
+    padding: 8px;
+  }
+  
+  .products-container {
+    max-width: 1200px;
+    margin-top: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-inline: auto;
+    display: grid;
+    padding: 16px;
+  }
+  
+  .product {
+    background-color: #fff;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 0.4px solid #898989;
+    padding: 16px;
+  }
+  
+  .product:hover{
+    box-shadow: 0 1px 8px 1px rgb(0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .title-container {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  
+  .product h3 {
+    margin: 0; /* Remove default margin to avoid extra space */
+    line-height: 1.2; /* Adjust line height as needed */
+    max-height: 2.4em; /* (line-height * number of lines) to limit to two lines */
+    text-overflow: ellipsis;
+    white-space: normal; /* Allow text to wrap */
+    font-size: 1rem;
+  }
+  
+  .product-image {
+    height: 160px;
+    overflow: hidden;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .product-image img:hover{
+    object-fit: cover;
+  }
+  .price-rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .price-rating-container p{
+    margin: 0;
+  }
+  
+  .cta-container {
+    display: flex;
+    gap: 8px;
+    height: 40px;
+  }
+  
+  .cta-container button {
+    width: 50%;
+    padding: 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(147, 190, 254);
+    cursor: pointer;
+  }
+  .cta-container button:hover{
+    background-color: chartreuse;
+  }
+  .buy-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .buy-btn button{
+    border-radius: 15px;
+    border: none;
+    width: 95%;
+    margin: 5px;
+    background-color: yellow;
+  }
+  .buy-btn button:hover{
+    background-color: chartreuse;
+  }
+
+  .cart-buy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .buy-btn-cart button{
+    border-radius: 15px;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    background-color: yellow;
+  }
+  .buy-btn-cart button:hover{
+    background-color: chartreuse;
+  }
+  
+  header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 2px solid #898989;
+    box-shadow: 0 0 10px 1px rgb(0, 0, 0.1);
+  }
+  
+  .header-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    gap: 250px;
+    height: 80px;
+  }
+  .title-name{
+    width: 500px;
+    margin-left: 35px;
+    text-shadow: 2px 5px 5px grey 
+  }
+  .cart-and-wishlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+    width: 500px;
+    gap: 15px;
+  }
+  
+  .searchbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  form input {
+    padding: 8px;
+    font: inherit;
+    max-width: 400px;
+    width: 100%;
+    flex-grow: 1;
+  }
+  
+  form button {
+    cursor: pointer;
+    font: inherit;
+    margin-left: 8px;
+  }
+  
+  .price {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .cart-container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  
+  .cart-container h2 {
+    text-align: center;
+    margin: 32px 0;
+  }
+  
+  .cart-header {
+    font-weight: 700;
+    padding: 24px;
+  }
+  
+  .cart-item-container:not(:last-child) {
+    border-bottom: 1px solid #898989;
+  }
+  
+  .cart-item-container {
+    padding: 12px 24px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    overflow: auto;
+  }
+  
+  .cart-item-container > div:not(.cart-item) {
+    justify-content: center;
+  }
+  
+  .cart-item-container > div:last-child {
+    justify-content: flex-end;
+  }
+  
+  .cart-item-container img {
+    width: 100px;
+  }
+  
+  .cart-item-container > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 80%;
+  }
+  .cart-item{
+    max-width: 600px;
+  }
+  
+  .cart-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+  .cart-icon p{
+    font-size: 14px;
+    margin: 0;
+    height: 10px;
+  }
+  .cart-items-count {
+    position: absolute;
+    font-size: 12px;
+    background-color: black;
+    border-radius: 100%;
+    color: white;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 0;
+    left: 50%;
+    transform: translate(-40%, -90%);
+  }
+
+  .wishList-heading{
+    text-align: center;
+    margin-top: 15px
+  }
+  
+  .plus-minus-btn{
+    border-radius: 15px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .remove-btn{
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .Serch-input{
+    width: 300px;
+    margin-left: 15px;
+  }
+  .loading-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+  }
+
+  .products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 460px;
+    gap: 30px;
+    flex-shrink: inherit;
+    overflow: auto;
+  }
+
+  .image-product img{
+    width: 430px;
+    height: 300px;
+  }
+  .product-details p{
+    margin-bottom: 7px;
+  }
+  .offer{
+    color: red;
+  }
+  .deal-price{
+    color: green;
+  }
+
+  .placeOrder-btn{
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: yellow;
+    color: green;
+    font-weight: 600;
+    width: 150px;
+  }
+  .placeOrder-btn:hover{
+    background-color: chartreuse;
+    color: #fff;
+  }
+
+  .back-btn{
+    margin-top: 20px;
+    margin-left: 40px;
+  }
